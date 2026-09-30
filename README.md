@@ -1,4 +1,4 @@
-<img src="cover.png" alt="Cover Image" width="50%">
+<img src="cover.png" alt="Cover Image">
 
 # 🔎 Morse Code Decryption Trainer
 This is a simple trainer I made, so you can practice your morse code decryption skills
@@ -29,7 +29,7 @@ This is a simple trainer I made, so you can practice your morse code decryption 
 12. Upload code into the Arduino UNO
 13. You buzzer should beep
 
-![Diagram](diagram.png)
+<img src="diagram.png" alt="Diagram" width="50%">
 
 <br>
 
