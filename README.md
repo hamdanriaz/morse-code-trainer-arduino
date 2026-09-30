@@ -1,4 +1,4 @@
-!(Cover Image)[cover.png]
+![Cover Image](cover.png)
 
 # 🔎 Morse Code Decryption Trainer
 This is a simple trainer I made, so you can practice your morse code decryption skills
