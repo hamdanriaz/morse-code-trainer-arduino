@@ -1,0 +1,363 @@
+const int inputSpace = ; // Enter the input space, where the buzzer postitive goes (ex: 13)
+const int do_space = 150; //Adjust difficulty
+const int da_space = do_space * 3;
+const int L_space = do_space * 3;
+const int low_space = do_space * 2;
+
+void dot() {
+  digitalWrite(inputSpace, HIGH);
+  delay(do_space);
+  digitalWrite(inputSpace, LOW);
+  delay(low_space);
+}
+
+void dash() {
+  digitalWrite(inputSpace, HIGH);
+  delay(da_space);
+  digitalWrite(inputSpace, LOW);
+  delay(low_space);
+}
+
+void morse_a(){
+  dot();
+  dash();
+}
+
+void morse_b(){
+  dash();
+  dot();
+  dot();
+  dot();
+}
+
+void morse_c(){
+  dash();
+  dot();
+  dash();
+  dot();
+}
+
+void morse_d(){
+  dash();
+  dot();
+  dot();
+}
+
+void morse_e(){
+  dot();
+}
+
+void morse_f(){
+  dot();
+  dot();
+  dash();
+  dot();
+}
+
+void morse_g(){
+  dash();
+  dash();
+  dot();
+}
+
+void morse_h(){
+  dot();
+  dot();
+  dot();
+  dot();
+}
+
+void morse_i(){
+  dot();
+  dot();
+}
+
+void morse_j(){
+  dot();
+  dash();
+  dash();
+  dash();
+}
+
+void morse_k(){
+  dash();
+  dot();
+  dash();
+}
+
+void morse_l(){
+  dot();
+  dash();
+  dot();
+  dot();
+}
+
+void morse_m(){
+  dash();
+  dash();
+}
+
+void morse_n(){
+  dash();
+  dot();
+}
+
+void morse_o(){
+  dash();
+  dash();
+  dash();
+}
+
+void morse_p(){
+  dot();
+  dash();
+  dash();
+  dot();
+}
+
+void morse_q(){
+  dash();
+  dash();
+  dot();
+  dash();
+}
+
+void morse_r(){
+  dot();
+  dash();
+  dot();
+}
+
+void morse_s(){
+  dot();
+  dot();
+  dot();
+}
+
+void morse_T(){
+  dash();
+}
+
+void morse_u(){
+  dot();
+  dot();
+  dash();
+}
+
+void morse_v(){
+  dot();
+  dot();
+  dot();
+  dash();
+}
+
+void morse_w(){
+  dot();
+  dash();
+  dash();
+}
+
+void morse_x(){
+  dash();
+  dot();
+  dot();
+  dash();
+}
+
+void morse_y(){
+  dash();
+  dot();
+  dash();
+  dash();
+}
+
+void morse_z(){
+  dash();
+  dash();
+  dot();
+  dot();
+}
+
+void morse_1(){
+  dot();
+  dash();
+  dash();
+  dash();
+  dash();
+}
+
+void morse_2(){
+  dot();
+  dot();
+  dash();
+  dash();
+  dash();
+}
+
+void morse_3(){
+  dot();
+  dot();
+  dot();
+  dash();
+  dash();
+}
+
+void morse_4(){
+  dot();
+  dot();
+  dot();
+  dot();
+  dash();
+}
+
+void morse_5(){
+  dot();
+  dot();
+  dot();
+  dot();
+  dot();
+}
+
+void morse_6(){
+  dash();
+  dot();
+  dot();
+  dot();
+  dot();
+}
+
+void morse_7(){
+  dash();
+  dash();
+  dot();
+  dot();
+  dot();
+}
+
+void morse_8(){
+  dash();
+  dash();
+  dash();
+  dot();
+  dot();
+}
+
+void morse_9(){
+  dash();
+  dash();
+  dash();
+  dash();
+  dot();
+}
+
+void morse_0(){
+  dash();
+  dash();
+  dash();
+  dash();
+  dash();
+}
+
+String random_string(){
+  String x = "";
+  int i = 0;
+
+  int alphaNumerals = random(3, 11);
+
+  while (i < alphaNumerals) {
+    int alpha_or_numeral = random(0, 2);
+
+    if (alpha_or_numeral == 0) {
+      char randomLetter = (char)random(65, 91);
+      x += randomLetter;
+      i += 1;
+    } else {
+      int randomNumber = random(0, 10);
+      x += randomNumber;
+      i += 1;
+    }
+  }
+
+  return x;
+}
+
+void setup() {
+  pinMode(inputSpace, OUTPUT);
+  Serial.begin(9600);
+
+  Serial.println("--- Morse Practice Game ---");
+  Serial.println("Press Enter in the Serial Monitor to start...");
+  
+  while (!Serial.available()) {}
+  randomSeed(micros());
+  Serial.readString();
+}
+
+void loop() {
+  String randStr = random_string();
+  randStr.toUpperCase();
+
+  Serial.println("\nFlashing new code...");
+
+  for (int i = 0; i < randStr.length(); i++) {
+    char c = randStr[i];
+    if (c == 'A') {morse_a(); delay(L_space);}
+    if (c == 'B') {morse_b(); delay(L_space);}
+    if (c == 'C') {morse_c(); delay(L_space);}
+    if (c == 'D') {morse_d(); delay(L_space);}
+    if (c == 'E') {morse_e(); delay(L_space);}
+    if (c == 'F') {morse_f(); delay(L_space);}
+    if (c == 'G') {morse_g(); delay(L_space);}
+    if (c == 'H') {morse_h(); delay(L_space);}
+    if (c == 'I') {morse_i(); delay(L_space);}
+    if (c == 'J') {morse_j(); delay(L_space);}
+    if (c == 'K') {morse_k(); delay(L_space);}
+    if (c == 'L') {morse_l(); delay(L_space);}
+    if (c == 'M') {morse_m(); delay(L_space);}
+    if (c == 'N') {morse_n(); delay(L_space);}
+    if (c == 'O') {morse_o(); delay(L_space);}
+    if (c == 'P') {morse_p(); delay(L_space);}
+    if (c == 'Q') {morse_q(); delay(L_space);}
+    if (c == 'R') {morse_r(); delay(L_space);}
+    if (c == 'S') {morse_s(); delay(L_space);}
+    if (c == 'T') {morse_T(); delay(L_space);}
+    if (c == 'U') {morse_u(); delay(L_space);}
+    if (c == 'V') {morse_v(); delay(L_space);}
+    if (c == 'W') {morse_w(); delay(L_space);}
+    if (c == 'X') {morse_x(); delay(L_space);}
+    if (c == 'Y') {morse_y(); delay(L_space);}
+    if (c == 'Z') {morse_z(); delay(L_space);}
+    if (c == '0') {morse_0(); delay(L_space);}
+    if (c == '1') {morse_1(); delay(L_space);}
+    if (c == '2') {morse_2(); delay(L_space);}
+    if (c == '3') {morse_3(); delay(L_space);}
+    if (c == '4') {morse_4(); delay(L_space);}
+    if (c == '5') {morse_5(); delay(L_space);}
+    if (c == '6') {morse_6(); delay(L_space);}
+    if (c == '7') {morse_7(); delay(L_space);}
+    if (c == '8') {morse_8(); delay(L_space);}
+    if (c == '9') {morse_9(); delay(L_space);}
+    if (c == ' ') {delay(do_space * 7);}
+  }
+
+  Serial.print("Enter your answer: ");
+
+  while (Serial.available() > 0) { Serial.read(); }
+
+  while (!Serial.available()) {}
+
+  String inputStr = Serial.readString();
+  inputStr.toUpperCase();
+  inputStr.trim();
+
+  if (inputStr == randStr) {
+    Serial.println("\nCorrect!");
+  } else {
+    Serial.print("\nWrong.. the answer was: ");
+    Serial.println(randStr);
+  }
+
+  Serial.println("Type anything and press Enter to start the next round:");
+  while (!Serial.available()) {}
+  Serial.readString();
+}
