@@ -17,15 +17,19 @@ This is a simple trainer I made, so you can practice your morse code decryption 
 0. Buy Arduino UNO
 1. Download Arduino IDE on your laptop
 2. Connect your Arduino UNO to your laptop using USB
-3. Take the Male End of a Jumper Wire (the one with the long pin) and connect it to any output pin of arduino (preferrably ones without a '~')
-4. Connect the Female End of that Jumper Wire to the Positive of Buzzer (Most commonly the Red Wire)
-5. Take another Jumper Wire and connect the Male End to the Ground (GND) Pin of the Arduino
-6. Connect the Female End to the Negative of the Buzzer (Most commonly the Black Wire)
-7. Click 'New Sketch'
-8. Copy the code from 'arduino_code.txt' and paste into the Arduino IDE
-9. Select the boards and ports
-10. Upload code into the Arduino UNO
-11. You buzzer should beep
+3. Follow the steps 4 - 7, refer diagram to help
+4. Take the Male End of a Jumper Wire (the one with the long pin) and connect it to any output pin of arduino (preferrably ones without a '~')
+5. Connect the Female End of that Jumper Wire to the Positive of Buzzer (Most commonly the Red Wire)
+6. Take another Jumper Wire and connect the Male End to the Ground (GND) Pin of the Arduino
+7. Connect the Female End to the Negative of the Buzzer (Most commonly the Black Wire)
+8. Click 'New Sketch'
+9. Copy the code from 'arduino_code.txt' and paste into the Arduino IDE
+10. Enter the input pin in the first line after the '=' symbol (in the diagram, input pin is 13, so type 13)
+11. Select the boards and ports
+12. Upload code into the Arduino UNO
+13. You buzzer should beep
+
+![Diagram](diagram.png)
 
 <br>
 
